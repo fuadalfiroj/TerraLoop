@@ -1,0 +1,11 @@
+{
+  "name": "terraloop",
+  "version": "1.3.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "test": "node --test tests/engine.test.mjs tests/experience.test.mjs tests/comparison.test.mjs tests/exhibition.test.mjs",
+    "check": "node --check dist/app.mjs && node --check dist/engine.mjs && node --check dist/geo.mjs && node --check dist/farm-map.mjs && node --check dist/rotation-studio.mjs && node --check dist/simulation-model.mjs && node --check dist/comparison.mjs && node --check dist/field-scene.mjs && node --check dist/exhibition-data.mjs && node --check dist/exhibition-ui.mjs"
+  }
+}

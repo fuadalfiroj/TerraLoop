@@ -1,0 +1,1524 @@
+{
+  "provenance": {
+    "title": "TerraLoop exhibition farm collection",
+    "version": 1,
+    "synthetic": true,
+    "created": "2026-09-30",
+    "description": "Three fictional Bangladesh farm stories for repeatable product demonstrations. Names, boundaries, seasonal records, climate values, and outcomes are invented examples. They are not farmer surveys, NASA observations, or forecasts.",
+    "units": {
+      "area": "ha",
+      "yield": "t/ha",
+      "irrigation": "mm",
+      "fertilizer": "kg N/ha",
+      "nitrogen": "kg N/ha",
+      "rain": "mm",
+      "temperature": "°C",
+      "currency": "BDT"
+    },
+    "calendar": "A planning year contains Kharif (Jun–Nov) and Rabi (Dec–May of the following calendar year). Feedback year matches the planting/planning year; harvestYear is explicit.",
+    "linkage": "Each feedback record points to a historyId and uses that record’s actual yield. Plot area and centre are calculated from its boundary. Effective climate rainfall is 65% of the mean raw seasonal rainfall in the five example years. Future metrics are calculated by the app, not prewritten."
+  },
+  "farms": [
+    {
+      "id": "padma",
+      "name": "Padma Growers Farm",
+      "region": "Rajshahi",
+      "tag": "Drought & fertilizer pressure",
+      "color": "#759655",
+      "headline": "The familiar rotation is getting thirsty.",
+      "summary": "A small family-run farm wants to reduce irrigation dependence after repeated rice and maize seasons, while retaining a dependable income.",
+      "scenario": {
+        "type": "drought",
+        "year": 2028,
+        "season": "dry"
+      },
+      "baselineName": "Familiar rice → maize",
+      "baseline": [
+        "rice",
+        "maize"
+      ],
+      "alternativeName": "Pulses & cereals",
+      "alternative": [
+        "mung",
+        "chickpea",
+        "sorghum",
+        "lentil",
+        "sesame",
+        "chickpea",
+        "mung",
+        "wheat",
+        "sorghum",
+        "lentil"
+      ],
+      "climate": {
+        "source": "sample",
+        "label": "Exhibition climate · synthetic",
+        "synthetic": true,
+        "wetRain": 481,
+        "dryRain": 117,
+        "temperature": 27.2,
+        "years": [
+          {
+            "year": 2021,
+            "wetRain": 790,
+            "dryRain": 200,
+            "rain": 990,
+            "temp": 26.7,
+            "event": "Regular monsoon"
+          },
+          {
+            "year": 2022,
+            "wetRain": 720,
+            "dryRain": 160,
+            "rain": 880,
+            "temp": 27.1,
+            "event": "Short dry-season showers"
+          },
+          {
+            "year": 2023,
+            "wetRain": 890,
+            "dryRain": 230,
+            "rain": 1120,
+            "temp": 27,
+            "event": "Wetter monsoon"
+          },
+          {
+            "year": 2024,
+            "wetRain": 540,
+            "dryRain": 100,
+            "rain": 640,
+            "temp": 28,
+            "event": "Long dry spell"
+          },
+          {
+            "year": 2025,
+            "wetRain": 760,
+            "dryRain": 210,
+            "rain": 970,
+            "temp": 27.4,
+            "event": "Rainfall recovery"
+          }
+        ],
+        "effectiveRainFraction": 0.65
+      },
+      "cues": {
+        "overview": "A family farm is moving away from pump-heavy cereal repetition.",
+        "land": "The illustrative parcel is the same shape used in every simulation field. Its measured area scales water volume and income.",
+        "memory": "Follow the 2024 dry spell, higher irrigation, and lower rice yield; then the 2025 pulse and mulch trials.",
+        "rotation": "Balance dependable income with nitrogen carry-over and fewer repeated host families.",
+        "simulation": "Compare the familiar rice–maize pattern, the pulse-led alternative, and the adaptive plan on identical land.",
+        "water": "Show how the selected crop fits the 650 mm annual irrigation allowance.",
+        "climate": "Replay a constructed 2028 drought against the five-year synthetic rainfall context.",
+        "learning": "The 2024 rice outcome is 4.8 predicted versus 4.2 actual. It is the same harvest recorded in Farm Memory.",
+        "passport": "Close with the adaptive plan versus this farm’s familiar rice–maize rotation."
+      },
+      "state": {
+        "version": 1,
+        "farm": {
+          "name": "Padma Growers Farm",
+          "region": "Rajshahi",
+          "lat": 24.409581774232606,
+          "lon": 88.54838478739184,
+          "area": 2.531,
+          "boundary": [
+            [
+              24.40885356409811,
+              88.54760004617845
+            ],
+            [
+              24.40885356409811,
+              88.54897596675153
+            ],
+            [
+              24.409152138458865,
+              88.54919995382156
+            ],
+            [
+              24.410346435901893,
+              88.54913595751584
+            ],
+            [
+              24.410256863593666,
+              88.54760004617845
+            ]
+          ],
+          "locationSource": "Illustrative exhibition boundary",
+          "soil": "loam",
+          "water": 650,
+          "nitrogen": 64,
+          "residue": "mulch"
+        },
+        "history": [
+          {
+            "id": "padma-2021-wet",
+            "year": 2021,
+            "season": "wet",
+            "crop": "rice",
+            "yield": 4.6,
+            "irrigation": 220,
+            "fertilizer": 108,
+            "residue": "remove",
+            "pest": "Low stem-borer pressure",
+            "notes": "Rice straw removed for livestock; dependable monsoon harvest.",
+            "harvestYear": 2021,
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "padma-2021-dry",
+            "year": 2021,
+            "season": "dry",
+            "crop": "maize",
+            "yield": 7.8,
+            "irrigation": 380,
+            "fertilizer": 142,
+            "residue": "remove",
+            "pest": "Armyworm patches",
+            "notes": "Maize followed rice; a shared pump supplied the dry-season irrigation.",
+            "harvestYear": 2022,
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "padma-2022-wet",
+            "year": 2022,
+            "season": "wet",
+            "crop": "rice",
+            "yield": 4.4,
+            "irrigation": 245,
+            "fertilizer": 112,
+            "residue": "burn",
+            "pest": "Stem borer",
+            "notes": "Repeated cereal hosts; sedges returned along the field edge.",
+            "harvestYear": 2022,
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "padma-2022-dry",
+            "year": 2022,
+            "season": "dry",
+            "crop": "maize",
+            "yield": 7,
+            "irrigation": 420,
+            "fertilizer": 150,
+            "residue": "remove",
+            "pest": "Armyworm",
+            "notes": "Pump queues increased. Yield was below the 8.2 t/ha planning estimate.",
+            "harvestYear": 2023,
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "padma-2023-wet",
+            "year": 2023,
+            "season": "wet",
+            "crop": "rice",
+            "yield": 4.7,
+            "irrigation": 170,
+            "fertilizer": 106,
+            "residue": "incorporate",
+            "pest": "Low pest pressure",
+            "notes": "More rain reduced irrigation. Some straw was incorporated after harvest.",
+            "harvestYear": 2023,
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "padma-2023-dry",
+            "year": 2023,
+            "season": "dry",
+            "crop": "lentil",
+            "yield": 1.42,
+            "irrigation": 95,
+            "fertilizer": 22,
+            "residue": "incorporate",
+            "pest": "Aphid patches",
+            "notes": "First pulse trial interrupted the cereal sequence; less irrigation was needed.",
+            "harvestYear": 2024,
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "padma-2024-wet",
+            "year": 2024,
+            "season": "wet",
+            "crop": "rice",
+            "yield": 4.2,
+            "irrigation": 330,
+            "fertilizer": 118,
+            "residue": "remove",
+            "pest": "Stem borer",
+            "notes": "The long dry spell raised pump use. Actual yield was 12.5% below 4.8 t/ha.",
+            "harvestYear": 2024,
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "padma-2024-dry",
+            "year": 2024,
+            "season": "dry",
+            "crop": "maize",
+            "yield": 6.6,
+            "irrigation": 475,
+            "fertilizer": 155,
+            "residue": "mulch",
+            "pest": "Armyworm",
+            "notes": "Extra irrigation could not fully offset the hot, dry growing period.",
+            "harvestYear": 2025,
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "padma-2025-wet",
+            "year": 2025,
+            "season": "wet",
+            "crop": "mung",
+            "yield": 1.52,
+            "irrigation": 80,
+            "fertilizer": 18,
+            "residue": "mulch",
+            "pest": "Minor aphids",
+            "notes": "A second pulse trial beat the 1.45 t/ha estimate; residues were kept as mulch.",
+            "harvestYear": 2025,
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "padma-2025-dry",
+            "year": 2025,
+            "season": "dry",
+            "crop": "chickpea",
+            "yield": 1.58,
+            "irrigation": 115,
+            "fertilizer": 20,
+            "residue": "mulch",
+            "pest": "Low pod-borer pressure",
+            "notes": "The household kept the low-water crop and mulch practice for the next plan.",
+            "harvestYear": 2026,
+            "source": "Exhibition example",
+            "synthetic": true
+          }
+        ],
+        "feedback": [
+          {
+            "id": "outcome-padma-2022-dry",
+            "historyId": "padma-2022-dry",
+            "crop": "maize",
+            "year": 2022,
+            "season": "dry",
+            "harvestYear": 2023,
+            "predicted": 8.2,
+            "actual": 7,
+            "pest": "Armyworm",
+            "irrigation": "more",
+            "useful": "partly",
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "outcome-padma-2023-dry",
+            "historyId": "padma-2023-dry",
+            "crop": "lentil",
+            "year": 2023,
+            "season": "dry",
+            "harvestYear": 2024,
+            "predicted": 1.5,
+            "actual": 1.42,
+            "pest": "Aphid patches",
+            "irrigation": "less",
+            "useful": "yes",
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "outcome-padma-2024-wet",
+            "historyId": "padma-2024-wet",
+            "crop": "rice",
+            "year": 2024,
+            "season": "wet",
+            "harvestYear": 2024,
+            "predicted": 4.8,
+            "actual": 4.2,
+            "pest": "Stem borer",
+            "irrigation": "more",
+            "useful": "partly",
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "outcome-padma-2024-dry",
+            "historyId": "padma-2024-dry",
+            "crop": "maize",
+            "year": 2024,
+            "season": "dry",
+            "harvestYear": 2025,
+            "predicted": 8,
+            "actual": 6.6,
+            "pest": "Armyworm",
+            "irrigation": "more",
+            "useful": "no",
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "outcome-padma-2025-wet",
+            "historyId": "padma-2025-wet",
+            "crop": "mung",
+            "year": 2025,
+            "season": "wet",
+            "harvestYear": 2025,
+            "predicted": 1.45,
+            "actual": 1.52,
+            "pest": "Minor aphids",
+            "irrigation": "less",
+            "useful": "yes",
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "outcome-padma-2025-dry",
+            "historyId": "padma-2025-dry",
+            "crop": "chickpea",
+            "year": 2025,
+            "season": "dry",
+            "harvestYear": 2026,
+            "predicted": 1.6,
+            "actual": 1.58,
+            "pest": "Low pod-borer pressure",
+            "irrigation": "same",
+            "useful": "yes",
+            "source": "Exhibition example",
+            "synthetic": true
+          }
+        ],
+        "climate": {
+          "source": "sample",
+          "label": "Exhibition climate · synthetic",
+          "synthetic": true,
+          "wetRain": 481,
+          "dryRain": 117,
+          "temperature": 27.2,
+          "years": [
+            {
+              "year": 2021,
+              "wetRain": 790,
+              "dryRain": 200,
+              "rain": 990,
+              "temp": 26.7,
+              "event": "Regular monsoon"
+            },
+            {
+              "year": 2022,
+              "wetRain": 720,
+              "dryRain": 160,
+              "rain": 880,
+              "temp": 27.1,
+              "event": "Short dry-season showers"
+            },
+            {
+              "year": 2023,
+              "wetRain": 890,
+              "dryRain": 230,
+              "rain": 1120,
+              "temp": 27,
+              "event": "Wetter monsoon"
+            },
+            {
+              "year": 2024,
+              "wetRain": 540,
+              "dryRain": 100,
+              "rain": 640,
+              "temp": 28,
+              "event": "Long dry spell"
+            },
+            {
+              "year": 2025,
+              "wetRain": 760,
+              "dryRain": 210,
+              "rain": 970,
+              "temp": 27.4,
+              "event": "Rainfall recovery"
+            }
+          ],
+          "effectiveRainFraction": 0.65
+        },
+        "priority": "balanced",
+        "horizon": 5,
+        "simComparison": {
+          "selected": [
+            "adaptive",
+            "custom-current",
+            "custom-diverse"
+          ],
+          "reference": "custom-current",
+          "custom": [
+            {
+              "id": "custom-current",
+              "name": "Familiar rice → maize",
+              "crops": [
+                "rice",
+                "maize",
+                "rice",
+                "maize",
+                "rice",
+                "maize",
+                "rice",
+                "maize",
+                "rice",
+                "maize"
+              ]
+            },
+            {
+              "id": "custom-diverse",
+              "name": "Pulses & cereals",
+              "crops": [
+                "mung",
+                "chickpea",
+                "sorghum",
+                "lentil",
+                "sesame",
+                "chickpea",
+                "mung",
+                "wheat",
+                "sorghum",
+                "lentil"
+              ]
+            }
+          ]
+        },
+        "exhibition": {
+          "datasetVersion": 1,
+          "farmId": "padma",
+          "step": 0,
+          "scenario": null,
+          "guide": true,
+          "synthetic": true
+        }
+      }
+    },
+    {
+      "id": "dharla",
+      "name": "Dharla Community Farm",
+      "region": "Kurigram",
+      "tag": "Flood recovery & heavy soil",
+      "color": "#6b98a0",
+      "headline": "Keep a way back after the water recedes.",
+      "summary": "A shared clay-soil farm has experienced waterlogging. It needs a rotation that recognizes its soil, retains useful residue, and prepares for recovery.",
+      "scenario": {
+        "type": "flood",
+        "year": 2027,
+        "season": "wet"
+      },
+      "baselineName": "Familiar rice → wheat",
+      "baseline": [
+        "rice",
+        "wheat"
+      ],
+      "alternativeName": "Rice, pulses & mustard",
+      "alternative": [
+        "rice",
+        "lentil",
+        "sorghum",
+        "mustard",
+        "rice",
+        "chickpea",
+        "jute",
+        "lentil",
+        "rice",
+        "mustard"
+      ],
+      "climate": {
+        "source": "sample",
+        "label": "Exhibition climate · synthetic",
+        "synthetic": true,
+        "wetRain": 1011,
+        "dryRain": 139,
+        "temperature": 26.2,
+        "years": [
+          {
+            "year": 2021,
+            "wetRain": 1350,
+            "dryRain": 210,
+            "rain": 1560,
+            "temp": 25.9,
+            "event": "Regular monsoon"
+          },
+          {
+            "year": 2022,
+            "wetRain": 1810,
+            "dryRain": 250,
+            "rain": 2060,
+            "temp": 26,
+            "event": "Prolonged wet period"
+          },
+          {
+            "year": 2023,
+            "wetRain": 1460,
+            "dryRain": 190,
+            "rain": 1650,
+            "temp": 26.4,
+            "event": "Typical recovery year"
+          },
+          {
+            "year": 2024,
+            "wetRain": 1620,
+            "dryRain": 220,
+            "rain": 1840,
+            "temp": 26.5,
+            "event": "Intense monsoon spells"
+          },
+          {
+            "year": 2025,
+            "wetRain": 1540,
+            "dryRain": 200,
+            "rain": 1740,
+            "temp": 26.2,
+            "event": "Short waterlogging period"
+          }
+        ],
+        "effectiveRainFraction": 0.65
+      },
+      "cues": {
+        "overview": "A cooperative-style farm balances heavy soil, waterlogging history, and recovery crops.",
+        "land": "This synthetic parcel supplies the map, field footprint, and whole-farm volume calculations.",
+        "memory": "The wet 2022 example links lower rice yield with waterlogging. Later mustard trials break the cereal sequence.",
+        "rotation": "Clay soil excludes maize from the recommended crop pool. The relevant familiar baseline here is rice–wheat.",
+        "simulation": "Compare rice–wheat, a diversified pulse/mustard plan, and TerraLoop’s adaptive sequence.",
+        "water": "A wetter climate can reduce irrigation while flood stress still reduces yield. These are different effects.",
+        "climate": "Apply the 2027 flood scenario. Recovery suggestions assume standing floodwater has receded.",
+        "learning": "Rice and lentil outcomes capture the different costs of waterlogging; their yield adjustments carry into the planner.",
+        "passport": "Compare against rice–wheat, the same familiar rotation used in the simulation."
+      },
+      "state": {
+        "version": 1,
+        "farm": {
+          "name": "Dharla Community Farm",
+          "region": "Kurigram",
+          "lat": 25.811983421139296,
+          "lon": 89.66298727154565,
+          "area": 1.904,
+          "boundary": [
+            [
+              25.81132101312539,
+              89.66233067521406
+            ],
+            [
+              25.81132101312539,
+              89.66348191384587
+            ],
+            [
+              25.811592607875234,
+              89.66366932478593
+            ],
+            [
+              25.812678986874612,
+              89.66361577880305
+            ],
+            [
+              25.81259750844966,
+              89.66233067521406
+            ]
+          ],
+          "locationSource": "Illustrative exhibition boundary",
+          "soil": "clay",
+          "water": 500,
+          "nitrogen": 58,
+          "residue": "incorporate"
+        },
+        "history": [
+          {
+            "id": "dharla-2021-wet",
+            "year": 2021,
+            "season": "wet",
+            "crop": "rice",
+            "yield": 4.8,
+            "irrigation": 90,
+            "fertilizer": 100,
+            "residue": "incorporate",
+            "pest": "Minor stem borer",
+            "notes": "Aman rice established in heavy soil; straw returned after harvest.",
+            "harvestYear": 2021,
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "dharla-2021-dry",
+            "year": 2021,
+            "season": "dry",
+            "crop": "wheat",
+            "yield": 3.4,
+            "irrigation": 240,
+            "fertilizer": 95,
+            "residue": "remove",
+            "pest": "Low aphid pressure",
+            "notes": "The first dry-season cereal followed rice without a host-family break.",
+            "harvestYear": 2022,
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "dharla-2022-wet",
+            "year": 2022,
+            "season": "wet",
+            "crop": "rice",
+            "yield": 3.7,
+            "irrigation": 40,
+            "fertilizer": 96,
+            "residue": "incorporate",
+            "pest": "Blast symptoms",
+            "notes": "Prolonged wet conditions and waterlogging reduced harvest.",
+            "harvestYear": 2022,
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "dharla-2022-dry",
+            "year": 2022,
+            "season": "dry",
+            "crop": "mustard",
+            "yield": 1.48,
+            "irrigation": 90,
+            "fertilizer": 68,
+            "residue": "incorporate",
+            "pest": "Minor aphids",
+            "notes": "Sowing waited until drainage improved; mustard changed the crop family.",
+            "harvestYear": 2023,
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "dharla-2023-wet",
+            "year": 2023,
+            "season": "wet",
+            "crop": "jute",
+            "yield": 2.55,
+            "irrigation": 70,
+            "fertilizer": 88,
+            "residue": "remove",
+            "pest": "Stem-rot patches",
+            "notes": "A jute trial diversified the wet-season crop but required careful drainage.",
+            "harvestYear": 2023,
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "dharla-2023-dry",
+            "year": 2023,
+            "season": "dry",
+            "crop": "lentil",
+            "yield": 1.38,
+            "irrigation": 75,
+            "fertilizer": 24,
+            "residue": "incorporate",
+            "pest": "Root-rot patches",
+            "notes": "Lentil performed unevenly in low spots; wet soil remained a concern.",
+            "harvestYear": 2024,
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "dharla-2024-wet",
+            "year": 2024,
+            "season": "wet",
+            "crop": "rice",
+            "yield": 4.25,
+            "irrigation": 65,
+            "fertilizer": 103,
+            "residue": "incorporate",
+            "pest": "Blast symptoms",
+            "notes": "Intense rain interrupted field work; fertilizer was split around wet spells.",
+            "harvestYear": 2024,
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "dharla-2024-dry",
+            "year": 2024,
+            "season": "dry",
+            "crop": "wheat",
+            "yield": 3.22,
+            "irrigation": 255,
+            "fertilizer": 102,
+            "residue": "incorporate",
+            "pest": "Aphid patches",
+            "notes": "The cereal crop needed more irrigation after the monsoon receded.",
+            "harvestYear": 2025,
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "dharla-2025-wet",
+            "year": 2025,
+            "season": "wet",
+            "crop": "rice",
+            "yield": 4.5,
+            "irrigation": 55,
+            "fertilizer": 98,
+            "residue": "incorporate",
+            "pest": "Low stem-borer pressure",
+            "notes": "Drainage channels helped after brief waterlogging; residue incorporation continued.",
+            "harvestYear": 2025,
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "dharla-2025-dry",
+            "year": 2025,
+            "season": "dry",
+            "crop": "mustard",
+            "yield": 1.66,
+            "irrigation": 82,
+            "fertilizer": 70,
+            "residue": "incorporate",
+            "pest": "Minor aphids",
+            "notes": "Mustard recovered close to its planning estimate and changed the host family.",
+            "harvestYear": 2026,
+            "source": "Exhibition example",
+            "synthetic": true
+          }
+        ],
+        "feedback": [
+          {
+            "id": "outcome-dharla-2022-wet",
+            "historyId": "dharla-2022-wet",
+            "crop": "rice",
+            "year": 2022,
+            "season": "wet",
+            "harvestYear": 2022,
+            "predicted": 4.8,
+            "actual": 3.7,
+            "pest": "Blast symptoms",
+            "irrigation": "less",
+            "useful": "partly",
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "outcome-dharla-2023-wet",
+            "historyId": "dharla-2023-wet",
+            "crop": "jute",
+            "year": 2023,
+            "season": "wet",
+            "harvestYear": 2023,
+            "predicted": 2.7,
+            "actual": 2.55,
+            "pest": "Stem-rot patches",
+            "irrigation": "same",
+            "useful": "partly",
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "outcome-dharla-2023-dry",
+            "historyId": "dharla-2023-dry",
+            "crop": "lentil",
+            "year": 2023,
+            "season": "dry",
+            "harvestYear": 2024,
+            "predicted": 1.5,
+            "actual": 1.38,
+            "pest": "Root-rot patches",
+            "irrigation": "less",
+            "useful": "partly",
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "outcome-dharla-2024-wet",
+            "historyId": "dharla-2024-wet",
+            "crop": "rice",
+            "year": 2024,
+            "season": "wet",
+            "harvestYear": 2024,
+            "predicted": 4.8,
+            "actual": 4.25,
+            "pest": "Blast symptoms",
+            "irrigation": "less",
+            "useful": "partly",
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "outcome-dharla-2024-dry",
+            "historyId": "dharla-2024-dry",
+            "crop": "wheat",
+            "year": 2024,
+            "season": "dry",
+            "harvestYear": 2025,
+            "predicted": 3.6,
+            "actual": 3.22,
+            "pest": "Aphid patches",
+            "irrigation": "more",
+            "useful": "partly",
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "outcome-dharla-2025-dry",
+            "historyId": "dharla-2025-dry",
+            "crop": "mustard",
+            "year": 2025,
+            "season": "dry",
+            "harvestYear": 2026,
+            "predicted": 1.7,
+            "actual": 1.66,
+            "pest": "Minor aphids",
+            "irrigation": "same",
+            "useful": "yes",
+            "source": "Exhibition example",
+            "synthetic": true
+          }
+        ],
+        "climate": {
+          "source": "sample",
+          "label": "Exhibition climate · synthetic",
+          "synthetic": true,
+          "wetRain": 1011,
+          "dryRain": 139,
+          "temperature": 26.2,
+          "years": [
+            {
+              "year": 2021,
+              "wetRain": 1350,
+              "dryRain": 210,
+              "rain": 1560,
+              "temp": 25.9,
+              "event": "Regular monsoon"
+            },
+            {
+              "year": 2022,
+              "wetRain": 1810,
+              "dryRain": 250,
+              "rain": 2060,
+              "temp": 26,
+              "event": "Prolonged wet period"
+            },
+            {
+              "year": 2023,
+              "wetRain": 1460,
+              "dryRain": 190,
+              "rain": 1650,
+              "temp": 26.4,
+              "event": "Typical recovery year"
+            },
+            {
+              "year": 2024,
+              "wetRain": 1620,
+              "dryRain": 220,
+              "rain": 1840,
+              "temp": 26.5,
+              "event": "Intense monsoon spells"
+            },
+            {
+              "year": 2025,
+              "wetRain": 1540,
+              "dryRain": 200,
+              "rain": 1740,
+              "temp": 26.2,
+              "event": "Short waterlogging period"
+            }
+          ],
+          "effectiveRainFraction": 0.65
+        },
+        "priority": "balanced",
+        "horizon": 5,
+        "simComparison": {
+          "selected": [
+            "adaptive",
+            "custom-current",
+            "custom-diverse"
+          ],
+          "reference": "custom-current",
+          "custom": [
+            {
+              "id": "custom-current",
+              "name": "Familiar rice → wheat",
+              "crops": [
+                "rice",
+                "wheat",
+                "rice",
+                "wheat",
+                "rice",
+                "wheat",
+                "rice",
+                "wheat",
+                "rice",
+                "wheat"
+              ]
+            },
+            {
+              "id": "custom-diverse",
+              "name": "Rice, pulses & mustard",
+              "crops": [
+                "rice",
+                "lentil",
+                "sorghum",
+                "mustard",
+                "rice",
+                "chickpea",
+                "jute",
+                "lentil",
+                "rice",
+                "mustard"
+              ]
+            }
+          ]
+        },
+        "exhibition": {
+          "datasetVersion": 1,
+          "farmId": "dharla",
+          "step": 0,
+          "scenario": null,
+          "guide": true,
+          "synthetic": true
+        }
+      }
+    },
+    {
+      "id": "teesta",
+      "name": "Teesta Char Farm",
+      "region": "Rangpur",
+      "tag": "Sandy soil & a limited water supply",
+      "color": "#b38d59",
+      "headline": "Make a smaller water budget go further.",
+      "summary": "A small sandy-soil farm alternates sorghum and maize, trials mung bean, and retains mulch. Its limited pump allocation makes crop choice especially visible.",
+      "scenario": {
+        "type": "heat",
+        "year": 2029,
+        "season": "dry"
+      },
+      "baselineName": "Familiar sorghum → maize",
+      "baseline": [
+        "sorghum",
+        "maize"
+      ],
+      "alternativeName": "Mung & sesame cycle",
+      "alternative": [
+        "mung",
+        "mung",
+        "sesame",
+        "mung",
+        "sorghum",
+        "mung",
+        "sesame",
+        "mung",
+        "sorghum",
+        "mung"
+      ],
+      "climate": {
+        "source": "sample",
+        "label": "Exhibition climate · synthetic",
+        "synthetic": true,
+        "wetRain": 528,
+        "dryRain": 87,
+        "temperature": 26.7,
+        "years": [
+          {
+            "year": 2021,
+            "wetRain": 850,
+            "dryRain": 145,
+            "rain": 995,
+            "temp": 26.1,
+            "event": "Steady wet season"
+          },
+          {
+            "year": 2022,
+            "wetRain": 720,
+            "dryRain": 115,
+            "rain": 835,
+            "temp": 26.7,
+            "event": "Dry-season water limits"
+          },
+          {
+            "year": 2023,
+            "wetRain": 970,
+            "dryRain": 175,
+            "rain": 1145,
+            "temp": 26.3,
+            "event": "Wetter monsoon"
+          },
+          {
+            "year": 2024,
+            "wetRain": 670,
+            "dryRain": 95,
+            "rain": 765,
+            "temp": 27.5,
+            "event": "Hot dry period"
+          },
+          {
+            "year": 2025,
+            "wetRain": 850,
+            "dryRain": 140,
+            "rain": 990,
+            "temp": 27,
+            "event": "Patchy dry-season rain"
+          }
+        ],
+        "effectiveRainFraction": 0.65
+      },
+      "cues": {
+        "overview": "A small farm prioritizes affordable irrigation and soil cover.",
+        "land": "A smaller parcel reduces total cubic metres and income while per-hectare estimates remain comparable.",
+        "memory": "Maize needed extra purchased water. The later mung-bean trial used less irrigation.",
+        "rotation": "The sandy-soil crop pool and 400 mm annual water limit both shape the recommended sequence.",
+        "simulation": "Compare a high-water familiar pattern with the mung/sesame alternative and an adaptive plan.",
+        "water": "Lower the irrigation slider to show how a finite water allowance changes the crop pool.",
+        "climate": "Apply heat in 2029: modeled crop-water demand rises by 16%, with crop-specific yield stress.",
+        "learning": "Two disappointing maize outcomes lower that crop’s farm multiplier; mung-bean outcomes remain closer to expectations.",
+        "passport": "The familiar sorghum–maize plan can exceed the current budget. Its comparison assumes extra water is purchased."
+      },
+      "state": {
+        "version": 1,
+        "farm": {
+          "name": "Teesta Char Farm",
+          "region": "Rangpur",
+          "lat": 25.73398781289048,
+          "lon": 89.33698908350442,
+          "area": 1.201,
+          "boundary": [
+            [
+              25.733500877198136,
+              89.33642595692562
+            ],
+            [
+              25.733500877198136,
+              89.33741331101356
+            ],
+            [
+              25.73370052631888,
+              89.33757404307438
+            ],
+            [
+              25.734499122801868,
+              89.33752811962844
+            ],
+            [
+              25.734439228065646,
+              89.33642595692562
+            ]
+          ],
+          "locationSource": "Illustrative exhibition boundary",
+          "soil": "sandy",
+          "water": 400,
+          "nitrogen": 46,
+          "residue": "mulch"
+        },
+        "history": [
+          {
+            "id": "teesta-2021-wet",
+            "year": 2021,
+            "season": "wet",
+            "crop": "sorghum",
+            "yield": 3.3,
+            "irrigation": 75,
+            "fertilizer": 78,
+            "residue": "remove",
+            "pest": "Minor stem borer",
+            "notes": "Sorghum established on sandy soil with a small irrigation supplement.",
+            "harvestYear": 2021,
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "teesta-2021-dry",
+            "year": 2021,
+            "season": "dry",
+            "crop": "maize",
+            "yield": 7.5,
+            "irrigation": 410,
+            "fertilizer": 138,
+            "residue": "remove",
+            "pest": "Armyworm",
+            "notes": "The household bought additional pumping hours beyond its usual allocation.",
+            "harvestYear": 2022,
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "teesta-2022-wet",
+            "year": 2022,
+            "season": "wet",
+            "crop": "sesame",
+            "yield": 1.12,
+            "irrigation": 65,
+            "fertilizer": 58,
+            "residue": "mulch",
+            "pest": "Leaf-roller patches",
+            "notes": "Sesame reduced wet-season water demand and introduced another crop family.",
+            "harvestYear": 2022,
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "teesta-2022-dry",
+            "year": 2022,
+            "season": "dry",
+            "crop": "maize",
+            "yield": 6.7,
+            "irrigation": 450,
+            "fertilizer": 148,
+            "residue": "remove",
+            "pest": "Armyworm",
+            "notes": "Higher pumping cost and lower yield squeezed the margin.",
+            "harvestYear": 2023,
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "teesta-2023-wet",
+            "year": 2023,
+            "season": "wet",
+            "crop": "mung",
+            "yield": 1.4,
+            "irrigation": 35,
+            "fertilizer": 20,
+            "residue": "mulch",
+            "pest": "Minor pod borer",
+            "notes": "Mung bean was tried with retained surface cover.",
+            "harvestYear": 2023,
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "teesta-2023-dry",
+            "year": 2023,
+            "season": "dry",
+            "crop": "potato",
+            "yield": 19,
+            "irrigation": 360,
+            "fertilizer": 122,
+            "residue": "mulch",
+            "pest": "Cutworm patches",
+            "notes": "A higher-value crop produced more tonnage but needed more inputs.",
+            "harvestYear": 2024,
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "teesta-2024-wet",
+            "year": 2024,
+            "season": "wet",
+            "crop": "sorghum",
+            "yield": 3.05,
+            "irrigation": 115,
+            "fertilizer": 82,
+            "residue": "mulch",
+            "pest": "Stem borer",
+            "notes": "A hot, dry spell increased irrigation frequency on the sandy field.",
+            "harvestYear": 2024,
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "teesta-2024-dry",
+            "year": 2024,
+            "season": "dry",
+            "crop": "maize",
+            "yield": 6.3,
+            "irrigation": 480,
+            "fertilizer": 151,
+            "residue": "mulch",
+            "pest": "Armyworm",
+            "notes": "Extra purchased water did not prevent a lower-than-expected maize harvest.",
+            "harvestYear": 2025,
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "teesta-2025-wet",
+            "year": 2025,
+            "season": "wet",
+            "crop": "sesame",
+            "yield": 1.18,
+            "irrigation": 60,
+            "fertilizer": 56,
+            "residue": "mulch",
+            "pest": "Minor leaf roller",
+            "notes": "Mulch was retained to keep soil covered between seasons.",
+            "harvestYear": 2025,
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "teesta-2025-dry",
+            "year": 2025,
+            "season": "dry",
+            "crop": "mung",
+            "yield": 1.43,
+            "irrigation": 165,
+            "fertilizer": 18,
+            "residue": "mulch",
+            "pest": "Minor aphids",
+            "notes": "A lower-water dry-season pulse nearly matched its 1.45 t/ha estimate.",
+            "harvestYear": 2026,
+            "source": "Exhibition example",
+            "synthetic": true
+          }
+        ],
+        "feedback": [
+          {
+            "id": "outcome-teesta-2022-dry",
+            "historyId": "teesta-2022-dry",
+            "crop": "maize",
+            "year": 2022,
+            "season": "dry",
+            "harvestYear": 2023,
+            "predicted": 8.2,
+            "actual": 6.7,
+            "pest": "Armyworm",
+            "irrigation": "more",
+            "useful": "no",
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "outcome-teesta-2023-wet",
+            "historyId": "teesta-2023-wet",
+            "crop": "mung",
+            "year": 2023,
+            "season": "wet",
+            "harvestYear": 2023,
+            "predicted": 1.45,
+            "actual": 1.4,
+            "pest": "Minor pod borer",
+            "irrigation": "less",
+            "useful": "yes",
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "outcome-teesta-2023-dry",
+            "historyId": "teesta-2023-dry",
+            "crop": "potato",
+            "year": 2023,
+            "season": "dry",
+            "harvestYear": 2024,
+            "predicted": 22,
+            "actual": 19,
+            "pest": "Cutworm patches",
+            "irrigation": "same",
+            "useful": "partly",
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "outcome-teesta-2024-wet",
+            "historyId": "teesta-2024-wet",
+            "crop": "sorghum",
+            "year": 2024,
+            "season": "wet",
+            "harvestYear": 2024,
+            "predicted": 3.5,
+            "actual": 3.05,
+            "pest": "Stem borer",
+            "irrigation": "more",
+            "useful": "partly",
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "outcome-teesta-2024-dry",
+            "historyId": "teesta-2024-dry",
+            "crop": "maize",
+            "year": 2024,
+            "season": "dry",
+            "harvestYear": 2025,
+            "predicted": 7.8,
+            "actual": 6.3,
+            "pest": "Armyworm",
+            "irrigation": "more",
+            "useful": "no",
+            "source": "Exhibition example",
+            "synthetic": true
+          },
+          {
+            "id": "outcome-teesta-2025-dry",
+            "historyId": "teesta-2025-dry",
+            "crop": "mung",
+            "year": 2025,
+            "season": "dry",
+            "harvestYear": 2026,
+            "predicted": 1.45,
+            "actual": 1.43,
+            "pest": "Minor aphids",
+            "irrigation": "less",
+            "useful": "yes",
+            "source": "Exhibition example",
+            "synthetic": true
+          }
+        ],
+        "climate": {
+          "source": "sample",
+          "label": "Exhibition climate · synthetic",
+          "synthetic": true,
+          "wetRain": 528,
+          "dryRain": 87,
+          "temperature": 26.7,
+          "years": [
+            {
+              "year": 2021,
+              "wetRain": 850,
+              "dryRain": 145,
+              "rain": 995,
+              "temp": 26.1,
+              "event": "Steady wet season"
+            },
+            {
+              "year": 2022,
+              "wetRain": 720,
+              "dryRain": 115,
+              "rain": 835,
+              "temp": 26.7,
+              "event": "Dry-season water limits"
+            },
+            {
+              "year": 2023,
+              "wetRain": 970,
+              "dryRain": 175,
+              "rain": 1145,
+              "temp": 26.3,
+              "event": "Wetter monsoon"
+            },
+            {
+              "year": 2024,
+              "wetRain": 670,
+              "dryRain": 95,
+              "rain": 765,
+              "temp": 27.5,
+              "event": "Hot dry period"
+            },
+            {
+              "year": 2025,
+              "wetRain": 850,
+              "dryRain": 140,
+              "rain": 990,
+              "temp": 27,
+              "event": "Patchy dry-season rain"
+            }
+          ],
+          "effectiveRainFraction": 0.65
+        },
+        "priority": "balanced",
+        "horizon": 5,
+        "simComparison": {
+          "selected": [
+            "adaptive",
+            "custom-current",
+            "custom-diverse"
+          ],
+          "reference": "custom-current",
+          "custom": [
+            {
+              "id": "custom-current",
+              "name": "Familiar sorghum → maize",
+              "crops": [
+                "sorghum",
+                "maize",
+                "sorghum",
+                "maize",
+                "sorghum",
+                "maize",
+                "sorghum",
+                "maize",
+                "sorghum",
+                "maize"
+              ]
+            },
+            {
+              "id": "custom-diverse",
+              "name": "Mung & sesame cycle",
+              "crops": [
+                "mung",
+                "mung",
+                "sesame",
+                "mung",
+                "sorghum",
+                "mung",
+                "sesame",
+                "mung",
+                "sorghum",
+                "mung"
+              ]
+            }
+          ]
+        },
+        "exhibition": {
+          "datasetVersion": 1,
+          "farmId": "teesta",
+          "step": 0,
+          "scenario": null,
+          "guide": true,
+          "synthetic": true
+        }
+      }
+    }
+  ],
+  "walkthrough": [
+    {
+      "id": "overview",
+      "page": "overview",
+      "title": "Meet the farm",
+      "seconds": 12
+    },
+    {
+      "id": "land",
+      "page": "land",
+      "title": "Locate the field",
+      "seconds": 12
+    },
+    {
+      "id": "memory",
+      "page": "memory",
+      "title": "Read its past",
+      "seconds": 20
+    },
+    {
+      "id": "rotation",
+      "page": "rotation",
+      "title": "Plan five years",
+      "seconds": 15
+    },
+    {
+      "id": "simulation",
+      "page": "simulation",
+      "title": "Compare rotations",
+      "seconds": 20
+    },
+    {
+      "id": "climate",
+      "page": "climate",
+      "title": "Introduce a disruption",
+      "seconds": 15,
+      "stress": true
+    },
+    {
+      "id": "escape",
+      "page": "simulation",
+      "title": "Watch the response",
+      "seconds": 20,
+      "stress": true
+    },
+    {
+      "id": "water",
+      "page": "water",
+      "title": "Balance the water",
+      "seconds": 15,
+      "stress": true
+    },
+    {
+      "id": "learning",
+      "page": "learning",
+      "title": "Learn from harvests",
+      "seconds": 18,
+      "stress": true
+    },
+    {
+      "id": "passport",
+      "page": "passport",
+      "title": "Show the passport",
+      "seconds": 13,
+      "stress": true
+    }
+  ]
+}
