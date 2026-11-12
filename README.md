@@ -512,4 +512,4 @@ Project **TerraLoop** developed for the **NASA Space Apps Challenge 2026**.
 | 3 | **Saudha Biswas** | UI/UX Designer & Frontend Developer | — |
 | 4 | **Md. Emtiaz Ahomad** | Data Person | [@mdemtiazahomad-star](https://github.com/mdemtiazahomad-star) |
 | 5 | **Priyanta Datta Partho** | Video Narrator & Presenter | [@pr1yanta](https://github.com/pr1yanta) |
-| 6 | **Masfi Mimu** | Video Narrator & Presenter | — |
+| 6 | **Masfi Mimu** | Video Narrator & Presenter | [@masfimimu3](https://github.com/masfimimu3) |
