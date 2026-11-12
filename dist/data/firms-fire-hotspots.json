@@ -1,0 +1,42 @@
+{
+  "source": "NASA FIRMS (Fire Information for Resource Management System)",
+  "instrument": "VIIRS (Suomi NPP & NOAA-20) / MODIS (Terra & Aqua)",
+  "region": "Bangladesh Agricultural Divisions",
+  "application": "Post-Harvest Crop Residue Burning & Thermal Anomaly Detection",
+  "description": "Satellite-detected thermal anomalies associated with post-harvest straw burning (Kharif rice stubble burning in Nov-Dec and Rabi wheat/stover burning in April-May). Burning destroys organic matter, accelerates soil erosion, and releases bioavailable nitrogen as atmospheric pollution.",
+  "hotspotsByDivision": {
+    "Rajshahi": {
+      "averageAnnualHotspots": 142,
+      "peakBurningMonths": ["November", "December", "April"],
+      "soilCarbonLossEstimatedTonnesPerYear": 4200,
+      "primaryCropsBurned": ["Aman rice straw", "Boro stubble"],
+      "conservationAlternative": "In-situ straw mulching and zero-till seed drilling"
+    },
+    "Rangpur": {
+      "averageAnnualHotspots": 188,
+      "peakBurningMonths": ["November", "December", "May"],
+      "soilCarbonLossEstimatedTonnesPerYear": 5600,
+      "primaryCropsBurned": ["Maize stover", "Rice stubble"],
+      "conservationAlternative": "Stover chopping for fodder and biochar composting"
+    },
+    "Khulna": {
+      "averageAnnualHotspots": 96,
+      "peakBurningMonths": ["December", "January"],
+      "soilCarbonLossEstimatedTonnesPerYear": 2800,
+      "primaryCropsBurned": ["Saline boro stubble"],
+      "conservationAlternative": "Surface residue cover to suppress capillary salt accumulation"
+    },
+    "Dhaka": {
+      "averageAnnualHotspots": 115,
+      "peakBurningMonths": ["November", "April"],
+      "soilCarbonLossEstimatedTonnesPerYear": 3400,
+      "primaryCropsBurned": ["Intensive triple-crop residues"],
+      "conservationAlternative": "Mushroom cultivation substrate and biological incorporation"
+    }
+  },
+  "seasonalFireIndices": [
+    {"season": "Kharif-Harvest (Oct-Dec)", "riskLevel": "High", "drivingFactor": "Rapid turnaround window before Rabi pulse/wheat sowing"},
+    {"season": "Rabi-Harvest (Apr-May)", "riskLevel": "High", "drivingFactor": "High ambient temperatures and dry stover burning"},
+    {"season": "Monsoon (Jun-Sep)", "riskLevel": "Negligible", "drivingFactor": "Heavy precipitation and waterlogged paddies"}
+  ]
+}

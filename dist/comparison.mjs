@@ -1,4 +1,5 @@
 import {crop, CROPS, slot, optimize, simulateSequence, metrics} from './engine.mjs';
+import {computeErosionRisk, simulateSoilOrganicMatter, analyzeVulnerabilityGaps, generateStrategyExplanation, SOIL_TEXTURE_INFO} from './soil-health.mjs';
 
 export const MAX_VISIBLE = 4;
 export const MAX_CUSTOM = 4;
@@ -11,14 +12,20 @@ export function normalizeComparison(value, fallbackIds) {
   const custom = [];
   for (const item of (Array.isArray(value?.custom) ? value.custom : []).slice(0, MAX_CUSTOM)) {
     if (!/^custom-[a-z0-9-]{1,50}$/.test(item?.id) || custom.some(p => p.id === item.id)) continue;
-    custom.push({id:item.id, name:String(item.name || 'My rotation').trim().slice(0, 48) || 'My rotation',
-      crops:Array.from({length:Math.max(fallbackIds.length, Math.min(10, Array.isArray(item.crops)?item.crops.length:0))}, (_, i) => crop(item.crops?.[i]) ? item.crops[i] : fallbackIds[i] || 'fallow')});
+    custom.push({
+      id: item.id,
+      name: String(item.name || 'My rotation').trim().slice(0, 48) || 'My rotation',
+      crops: Array.from(
+        {length: Math.max(fallbackIds.length, Math.min(10, Array.isArray(item.crops) ? item.crops.length : 0))},
+        (_, i) => (crop(item.crops?.[i]) ? item.crops[i] : fallbackIds[i] || 'fallow')
+      )
+    });
   }
   const known = new Set([...PRESETS, ...custom.map(p => p.id)]);
   let selected = [...new Set(Array.isArray(value?.selected) ? value.selected : ['adaptive', 'rice-maize'])]
     .filter(id => known.has(id)).slice(0, MAX_VISIBLE);
   if (!selected.length) selected = ['adaptive'];
-  return {custom, selected, reference:selected.includes(value?.reference) ? value.reference : selected[0]};
+  return {custom, selected, reference: selected.includes(value?.reference) ? value.reference : selected[0]};
 }
 
 export function selectableCrops(farm, index) {
@@ -36,33 +43,68 @@ export function auditRotation(rows, farm) {
   for (const [year, water] of annual) {
     if (water > farm.water) issues.push(`${year}: ${Math.round(water)} mm irrigation needed, ${Math.round(water - farm.water)} mm above the annual budget.`);
   }
-  return {issues, annual:[...annual].map(([year,water]) => ({year,water})), feasible:issues.length === 0};
+  return {issues, annual: [...annual].map(([year, water]) => ({year, water})), feasible: issues.length === 0};
 }
 
 export function comparisonPlans(config, args) {
   const {normalRows, adaptiveRows, shock, ...model} = args;
   const fixed = ids => simulateSequence(ids, {...model, shock});
-  const waterRows = optimize({...model, priority:'water', shock:null}).rows;
+  const waterRows = optimize({...model, priority: 'water', shock: null}).rows;
+
+  const baselineOM = SOIL_TEXTURE_INFO[model.farm?.soil]?.typicalBaselineOM || 1.45;
+  const annualRain = model.climate?.years?.reduce((s, y) => s + y.rain, 0) / Math.max(1, model.climate?.years?.length || 1) || 1400;
+
   const library = [
     {id:'adaptive', name:'TerraLoop adaptive', kind:'Adaptive', description:'Replans future crops after a disruption.', rows:adaptiveRows},
     {id:'original', name:'Original plan', kind:'Fixed', description:'Your normal plan, with its crops held fixed.', rows:fixed(normalRows.map(r => r.id))},
-    {id:'rice-maize', name:'Rice → maize', kind:'Benchmark', description:'The same rice–maize pair repeated each year.', rows:fixed(normalRows.map((_,i) => i % 2 ? 'maize' : 'rice'))},
+    {id:'rice-maize', name:'Rice → maize', kind:'Benchmark', description:'The same rice–maize pair repeated each year.', rows:fixed(normalRows.map((_, i) => (i % 2 ? 'maize' : 'rice')))},
     {id:'water', name:'Water-saving plan', kind:'Fixed', description:'A water-priority plan, with its crops held fixed.', rows:fixed(waterRows.map(r => r.id))},
-    ...config.custom.map(p => ({...p, kind:'Custom', description:'Your crop choices, held fixed under stress.', rows:fixed(p.crops.slice(0,normalRows.length))}))
-  ].map((p, i) => ({...p, color:PLAN_COLORS[i], summary:metrics(p.rows), audit:auditRotation(p.rows, model.farm)}));
-  return {library, visible:config.selected.map(id => library.find(p => p.id === id)).filter(p => p?.rows.length)};
+    ...config.custom.map(p => ({...p, kind:'Custom', description:'Your crop choices, held fixed under stress.', rows:fixed(p.crops.slice(0, normalRows.length))}))
+  ].map((p, i) => {
+    const summary = metrics(p.rows);
+    const audit = auditRotation(p.rows, model.farm);
+    const som = simulateSoilOrganicMatter({startOM: baselineOM, rows: p.rows, residue: model.farm.residue, soilType: model.farm.soil});
+    const erosion = computeErosionRisk({annualRain, soilType: model.farm.soil, cropId: p.rows[0]?.id || 'rice', residue: model.farm.residue});
+    const vulnerabilities = analyzeVulnerabilityGaps(p.rows, model.climate);
+    const explanation = generateStrategyExplanation({
+      strategyId: p.id,
+      strategyName: p.name,
+      rows: p.rows,
+      farm: model.farm,
+      earthObs: model.climate,
+      somResult: som,
+      erosionResult: erosion,
+      metricsData: summary
+    });
+
+    return {
+      ...p,
+      color: PLAN_COLORS[i],
+      summary,
+      audit,
+      som,
+      erosion,
+      vulnerabilities,
+      explanation
+    };
+  });
+
+  return {library, visible: config.selected.map(id => library.find(p => p.id === id)).filter(p => p?.rows.length)};
 }
 
 export function comparisonSeries(rows, farm, metric) {
   let value = metric === 'nitrogen' ? farm.nitrogen : 0;
-  return [value, ...rows.map(row => {
-    value = metric === 'nitrogen' ? row.nitrogen : value + (metric === 'income' ? row.profit * farm.area : row.water.irrigation * farm.area * 10);
-    return value;
-  })];
+  return [
+    value,
+    ...rows.map(row => {
+      value = metric === 'nitrogen' ? row.nitrogen : value + (metric === 'income' ? row.profit * farm.area : row.water.irrigation * farm.area * 10);
+      return value;
+    })
+  ];
 }
 
 export function relativeChange(value, reference) {
   if (!Number.isFinite(value) || !Number.isFinite(reference)) return null;
   if (reference === 0) return value === 0 ? 0 : null;
-  return (value - reference) / Math.abs(reference) * 100;
+  return ((value - reference) / Math.abs(reference)) * 100;
 }

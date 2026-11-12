@@ -10,3 +10,90 @@ p{font-size:16px}.nav-item,.btn,.text-button,label,input,select,textarea,.inline
 @media(max-width:1200px){.twin-hero{grid-template-columns:1fr}.hero-grid{grid-template-columns:minmax(0,1fr) 245px}.sidebar .nav-item{font-size:12px}.hero-copy h2{font-size:31px}.hero-copy p{font-size:13px}.stats{grid-template-columns:repeat(2,1fr)}.stat>svg{float:right;margin:0}.hero-footer{font-size:11px}.crop-water{font-size:12px}.stat p{font-size:12px}.score-row{grid-template-columns:1fr 1fr}.score-row b{display:none}}
 @media(max-width:650px){.hero-grid{grid-template-columns:1fr}.twin-hero{min-height:345px}.hero-top .eyebrow{font-size:10px}.hero-copy h2{font-size:34px}.hero-copy p{font-size:14px}.hero-copy .btn,.page-heading .btn{font-size:14px}.hero-footer{font-size:12px}.section-title{flex-wrap:wrap}.section-title .text-button{font-size:12px}.page-heading p{font-size:14px}.page-heading .eyebrow{font-size:10px}.stat>span{font-size:12px}.stat>strong{font-size:24px}.stat small{font-size:11px}.hero-top .badge{font-size:10px}.segmented button{font-size:12px;padding:12px 8px}.disaster-deck{grid-template-columns:1fr}.disaster-card{align-items:flex-start;flex-direction:row;flex-wrap:wrap;padding:18px;gap:12px}.disaster-card strong{font-size:14px}.disaster-card span{font-size:12px}.disaster-card svg{width:22px;height:22px}.escape-panel h2{font-size:25px}.escape-metrics span{font-size:12px}.form-grid{grid-template-columns:1fr}.topbar .breadcrumb{font-size:11px}.topbar .badge{font-size:9px}.water-summary h2 small{font-size:14px}.water-summary p{font-size:12px}.climate-bars>div>span{font-size:10px}.confidence-row{font-size:13px}.passport td{font-size:12px}.insight-panel p{font-size:14px}.insight-panel .text-button{font-size:14px}.sidebar.open .brand{font-size:26px}.year-targets button{font-size:14px}}
 @media print{.sidebar,.topbar,footer,.btn,.text-button,.page-heading,.two-grid,#toast,dialog{display:none!important}.app-main{margin:0}main{padding:0}.passport{border:0}.passport-bottom{display:none}body{background:white;color:#111}.passport td{padding:12px}.passport-top{padding:10px 20px 25px}}
+
+
+/* ==========================================================================
+   NASA Earth Observations, Soil Health, Strategy Explainability, and Glossary
+   ========================================================================== */
+.earth-summary-banner{background:linear-gradient(135deg,#133428,#1c4a3b);color:#eaf2e7;border-radius:12px;padding:26px 30px;margin-bottom:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.earth-summary-banner h2{font-size:26px;color:#d5ebba;margin-top:6px}
+.earth-summary-banner p{color:#a9c5b2;font-size:13px;max-width:580px;line-height:1.6}
+.earth-badge-group{display:flex;gap:10px;flex-wrap:wrap}
+.earth-stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:24px}
+.earth-stat-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px;position:relative}
+.earth-stat-card .eyebrow{font-size:9px;color:#85947e}
+.earth-stat-card strong{display:block;font-size:24px;font-family:Manrope,sans-serif;margin:8px 0 4px;color:#284534}
+.earth-stat-card small{font-size:12px;color:#678255;font-weight:400}
+.earth-stat-card p{font-size:11px;color:#788675;line-height:1.5}
+.trend-tag{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:600;padding:3px 7px;border-radius:4px;margin-top:8px}
+.trend-tag.increasing{background:#eef4ea;color:#49793e}
+.trend-tag.decreasing{background:#f8ece7;color:#9b4937}
+.trend-tag.stable{background:#f2f3ef;color:#6d7767}
+
+.scenario-explorer-box{background:#f9faf6;border:1px solid #e1e8db;border-radius:10px;padding:22px;margin-bottom:24px}
+.scenario-sliders-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:16px}
+.slider-control-group{background:#fff;border:1px solid #e3eadc;border-radius:8px;padding:16px}
+.slider-header{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:600;color:#35533c;margin-bottom:8px}
+.slider-header output{color:#286b4f;font-weight:700}
+.slider-control-group input[type=range]{width:100%;accent-color:var(--green);margin:10px 0 6px}
+.slider-ticks{display:flex;justify-content:space-between;font-size:10px;color:#93a08d}
+
+.sat-matrix-table{width:100%;border-collapse:collapse;margin-top:14px;font-size:12px}
+.sat-matrix-table th{background:#f2f5ed;color:#546a48;padding:12px 16px;font-weight:600;border:1px solid #e2e8da}
+.sat-matrix-table td{padding:12px 16px;border:1px solid #e5ebd9;color:#66755e;line-height:1.6}
+.sat-matrix-table tr:nth-child(even){background:#fafbf8}
+
+.explain-box{background:#fff;border:1px solid #dfe5d8;border-radius:10px;padding:24px;margin-bottom:22px}
+.explain-header{display:flex;align-items:center;gap:12px;margin-bottom:16px;border-bottom:1px solid #eef2ea;padding-bottom:14px}
+.explain-header h3{font-size:18px;color:#284835}
+.explain-sections{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.explain-col{background:#f9faf6;border:1px solid #e8ede3;border-radius:8px;padding:16px}
+.explain-col h4{margin:0 0 10px;font-size:13px;color:#3f5843;display:flex;align-items:center;gap:8px}
+.explain-col ul{margin:0;padding-left:18px;font-size:12px;color:#6b7c68;line-height:1.7}
+.explain-col li{margin-bottom:6px}
+
+.vulnerability-banner{background:#fdf6e9;border:1px solid #f2dfba;border-radius:8px;padding:16px 20px;margin-bottom:20px;display:flex;gap:14px;align-items:flex-start}
+.vulnerability-banner svg{color:#ba822f;flex-shrink:0;margin-top:2px}
+.vulnerability-banner strong{font-size:13px;color:#855d1a;display:block}
+.vulnerability-banner p{font-size:12px;color:#7e693b;margin:4px 0 0;line-height:1.6}
+
+.glossary-dialog{display:flex;flex-direction:column;gap:18px}
+.glossary-search-bar input[type=search]{width:100%;padding:12px 16px;border:1px solid #cedbc5;border-radius:8px;font-size:14px;outline:none}
+.glossary-filter-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.pill{background:#edf2e7;border:1px solid #dce4d4;border-radius:20px;padding:6px 14px;font-size:11px;font-weight:600;color:#5a6e4e;cursor:pointer}
+.pill.active{background:var(--green);color:#fff;border-color:var(--green)}
+.glossary-list{max-height:60vh;overflow-y:auto;display:flex;flex-direction:column;gap:14px;padding-right:6px}
+.glossary-card{background:#fafbf8;border:1px solid #e4eadc;border-radius:8px;padding:16px}
+.glossary-card-header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.glossary-card-header h3{font-size:15px;color:#284333;margin:0}
+.glossary-short{font-size:12px;color:#52674e;margin-bottom:8px}
+.glossary-full{font-size:12px;color:#6d7b68;line-height:1.65;border-top:1px dashed #e1e7da;padding-top:8px}
+
+.weight-sliders-modal{display:flex;flex-direction:column;gap:16px}
+.weight-row{background:#f8faf5;border:1px solid #e2e8da;border-radius:8px;padding:14px}
+.weight-row-head{display:flex;justify-content:space-between;font-size:13px;font-weight:600;color:#35533c;margin-bottom:6px}
+.weight-row input{width:100%;margin:8px 0 4px;accent-color:var(--green)}
+.weight-row small{font-size:11px;color:#798772}
+
+.term-help-btn{display:inline-flex;align-items:center;justify-content:center;background:#e5edd8;color:#456b35;width:18px;height:18px;border-radius:50%;font-size:10px;font-weight:700;border:none;margin-left:5px;cursor:pointer;vertical-align:middle}
+.term-help-btn:hover{background:#355e37;color:#fff}
+.supportive-notice{background:#f4f7ef;border-left:4px solid var(--green);padding:14px 18px;font-size:12px;color:#5d7254;line-height:1.7;margin:18px 0;border-radius:0 8px 8px 0}
+
+
+/* ==========================================================================
+   NASA Earthdata Hub, FIRMS, SEDAC, and Remote Sensors Directory Styling
+   ========================================================================== */
+.earthdata-explorer-dialog{display:flex;flex-direction:column;gap:20px}
+.nasa-resource-card{display:block;background:#f9faf6;border:1px solid #dfe6d8;border-radius:8px;padding:14px;text-decoration:none;transition:transform .15s,box-shadow .15s,border-color .15s}
+.nasa-resource-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px #18382312;border-color:#a5c49b}
+.sensor-directory-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:12px}
+.sensor-cat-box{background:#fdfdfc;border:1px solid #e2e8db;border-radius:8px;padding:14px}
+.sensor-cat-box h4{margin:0 0 6px;font-size:13px;color:#2c4b37}
+.sensor-cat-box p{font-size:11px;color:#53664f;margin:0 0 4px;line-height:1.5}
+.sensor-cat-box small{font-size:10px;color:#788874;display:block;line-height:1.4}
+.firms-burn-warning{background:#fcf1ed;border-left:4px solid #c95d38;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}
+.firms-burn-warning strong{color:#9e3c1b;font-size:13px;display:block}
+.firms-burn-warning p{color:#84391e;font-size:12px;margin:4px 0 0;line-height:1.6}
+.sedac-benchmark-box{background:#f2f7ef;border:1px solid #d5e4cf;border-radius:8px;padding:14px;margin-top:14px}
+.sedac-benchmark-box strong{color:#305139;font-size:12px;display:block}
+.sedac-benchmark-box p{color:#496552;font-size:11px;margin:4px 0 0;line-height:1.5}

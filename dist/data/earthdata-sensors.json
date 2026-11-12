@@ -1,0 +1,50 @@
+{
+  "title": "NASA Earthdata Remote Sensors Directory: Which Satellite Measures What",
+  "sourceUrl": "https://earthdata.nasa.gov/user-resources/remote-sensors",
+  "lastUpdated": "2026-10-30",
+  "sensorTypes": [
+    {
+      "category": "Microwave Radiometers & Radars",
+      "whatItMeasures": "Soil Moisture, Sea Ice, Precipitation, Surface Roughness",
+      "howItWorks": "Emits or measures passive microwave radiation (1–10 GHz); penetrates through cloud cover and detects dielectric changes in water content in the top 5 cm of soil.",
+      "sensors": [
+        {"name": "SMAP L-band Radiometer & Radar", "mission": "SMAP", "targetVariable": "0–5 cm surface & 0–100 cm root-zone soil wetness", "resolution": "9 km (L4 model assimilated)"},
+        {"name": "DPR (Dual-frequency Precipitation Radar)", "mission": "GPM", "targetVariable": "3D storm structure, drop size, extreme precipitation intensity", "resolution": "5 km horizontal / 250 m vertical"}
+      ]
+    },
+    {
+      "category": "Thermal Infrared Radiometers",
+      "whatItMeasures": "Land Surface Temperature (LST), Evapotranspiration, Plant Stress",
+      "howItWorks": "Measures thermal radiance emitted by the Earth in the 8–12 µm spectrum. Water-stressed crops close stomata and warm up days before visible wilting.",
+      "sensors": [
+        {"name": "ECOSTRESS Multispectral Thermal IR", "mission": "ISS ECOSTRESS", "targetVariable": "Evaporative Stress Index (ESI) & field-scale ET", "resolution": "70 m"},
+        {"name": "MODIS Thermal Bands (31 & 32)", "mission": "Terra & Aqua", "targetVariable": "Daily Land Surface Temperature (Day/Night)", "resolution": "1 km"}
+      ]
+    },
+    {
+      "category": "Optical Multispectral Imagers",
+      "whatItMeasures": "Vegetation Vigor, Canopy Density, Crop Cover, Bare Soil Detection",
+      "howItWorks": "Measures reflected sunlight across visible, near-infrared (NIR), and shortwave-infrared (SWIR) wavelengths. Chlorophyll absorbs red light and scatters NIR.",
+      "sensors": [
+        {"name": "OLI / TIRS (Operational Land Imager)", "mission": "Landsat 8 & 9", "targetVariable": "NDVI, EVI, field boundary verification, crop residue cover", "resolution": "30 m (15 m panchromatic)"},
+        {"name": "VIIRS (Visible Infrared Imaging Radiometer Suite)", "mission": "Suomi NPP & NOAA-20", "targetVariable": "Active fire hotspots (FIRMS), crop residue burning", "resolution": "375 m / 750 m"}
+      ]
+    },
+    {
+      "category": "Satellite Gravimeters",
+      "whatItMeasures": "Terrestrial Water Storage, Deep Aquifer Depletion, Ice Sheet Mass",
+      "howItWorks": "Twin satellites continuously track subtle inter-satellite distance changes via microwave/laser interferometry as Earth's moving mass pulls on them.",
+      "sensors": [
+        {"name": "KBR / LRI (Laser Ranging Interferometer)", "mission": "GRACE & GRACE-FO", "targetVariable": "Monthly deep groundwater storage anomalies (TWSA)", "resolution": "300–400 km basin footprint"}
+      ]
+    },
+    {
+      "category": "Radar Topographic Altimeters",
+      "whatItMeasures": "Digital Elevation Models (DEM), Slope Steepness, Terrain Aspect",
+      "howItWorks": "Bounces radar pulses off terrain to measure distance and phase interference, constructing global 3D surface topography.",
+      "sensors": [
+        {"name": "C-band InSAR", "mission": "SRTM & NASADEM", "targetVariable": "Elevation (m), slope (%), topographic drainage accumulation", "resolution": "30 m (1 arc-second)"}
+      ]
+    }
+  ]
+}

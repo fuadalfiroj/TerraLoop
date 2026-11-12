@@ -1,0 +1,40 @@
+{
+  "source": "NASA Earthdata SEDAC (Socioeconomic Data and Applications Center - CIESIN, Columbia University)",
+  "dataset": "Global Agricultural Nitrogen and Phosphorus Application Grids / Rural Population Density",
+  "spatialResolution": "0.5 degree (~50 km) & 1 km CIESIN GPWv4",
+  "benchmarks": {
+    "Rajshahi": {
+      "syntheticNitrogenInputKgHa": 165,
+      "syntheticPhosphorusInputKgHa": 38,
+      "syntheticPotassiumInputKgHa": 45,
+      "soilOrganicCarbonBaselinePct": 1.45,
+      "ruralPopulationDensityPerKm2": 950,
+      "croppingIntensityPct": 192,
+      "irrigationExtractionVulnerability": "High (Groundwater-dominated Barind deep tubewells)"
+    },
+    "Kurigram": {
+      "syntheticNitrogenInputKgHa": 140,
+      "syntheticPhosphorusInputKgHa": 30,
+      "syntheticPotassiumInputKgHa": 35,
+      "soilOrganicCarbonBaselinePct": 1.85,
+      "ruralPopulationDensityPerKm2": 820,
+      "croppingIntensityPct": 178,
+      "irrigationExtractionVulnerability": "Low-Moderate (Shallow aquifers and river floodplains)"
+    },
+    "Rangpur": {
+      "syntheticNitrogenInputKgHa": 180,
+      "syntheticPhosphorusInputKgHa": 42,
+      "syntheticPotassiumInputKgHa": 50,
+      "soilOrganicCarbonBaselinePct": 0.95,
+      "ruralPopulationDensityPerKm2": 1050,
+      "croppingIntensityPct": 210,
+      "irrigationExtractionVulnerability": "High (Sandy charland drought and rapid percolation)"
+    }
+  },
+  "regionalNutrientGuidelines": {
+    "ureaLossToVolatilizationPct": 25,
+    "leachingLossUnderMonsoonPct": 35,
+    "legumeNReplacementCreditKgHa": 45,
+    "compostCarbonRetentionMultiplier": 1.35
+  }
+}
